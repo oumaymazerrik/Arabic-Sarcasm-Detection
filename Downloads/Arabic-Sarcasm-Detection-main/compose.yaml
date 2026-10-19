@@ -1,0 +1,15 @@
+services:
+  jupyter:
+    build: .
+    container_name: arabic-sarcasm-jupyter
+
+    ports:
+      - "8888:8888"
+
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./results:/app/results
+
+    restart: unless-stopped
